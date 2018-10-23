@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>天気</title>
+    <link href="./node_modules/bulma/css/bulma.css" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+    <div class="container is-widescreen">
+        <div id="app" class="control">
+            <section class="hero is-primary is-bold">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">
+                            今日の天気
+                        </h1>
+                        <h2 class="subtitle">
+                            現在の都市の天気を表示します
+                        </h2>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+
+                    <div class="hero-body">
+    <div class="container">
+                <form action="/" method="post">
+                
+                    <label class="label">City Name</label>
+                    <div class="field has-addons">
+                        <div class="control">
+                            <input class="input is-info" type="text" name="cityName" value="<%= cityName %>">
+                        </div>
+                        <div class="control">
+                            <input class="button is-primary" type="submit" value="投稿">
+                        </div>
+                    </div>
+                </form>
+                </div></div>
+            </section>
+            <section>
+                <div class="container">
+                    <p>{{ base }}</p>
+                    <p>{{ main.temp }}</p>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        var json = <%- JSON.stringify(weather) %>;
+    </script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

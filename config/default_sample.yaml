@@ -1,0 +1,4 @@
+config:
+  apikey : 'change your api key'
+const:
+  units : 'metric'
